@@ -118,7 +118,7 @@ background-image: url("images/empty_bottle_03.jpeg")
 
 ---
 
-background-image: url("bob.jpeg")
+background-image: url("images/bob.jpeg")
 
 ---
 # Procedure
