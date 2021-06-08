@@ -5,16 +5,21 @@
     <meta charset="utf-8" />
     <meta name="author" content="Jason Geller" />
     <script src="libs/header-attrs/header-attrs.js"></script>
-    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link href="libs/remark-css/hygge.css" rel="stylesheet" />
+    <link href="libs/remark-css/rutgers.css" rel="stylesheet" />
+    <link href="libs/remark-css/rutgers-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
 # What Did You Say? A Web-Based Validation of a Speech-In-Noise Task
+## BeOnline 2021
 ### Jason Geller
 ### Rutgers University Center for Cognitive Science
-### BeOnline 2021 06-28-2021
+### 2021-06-28 (updated: 2021-06-08)
 
 ---
 
@@ -23,11 +28,12 @@ class: center, middle, inverse, title-slide
     font-size: 22px;
     padding: 1em 4em 1em 4em;
 }
-&lt;/style&gt;
+
 
 
 ---
-background-image: url("cocktail.jpeg")
+
+background-image:url("images/cocktail.jpeg")
 
 
 ---
@@ -59,6 +65,7 @@ background-image: url("cocktail.jpeg")
 
 # Closed vs. Open-Set Tasks
 + Closed-set
+
   - Fall
   - Ball
   - Shawl
@@ -66,9 +73,8 @@ background-image: url("cocktail.jpeg")
 
 &lt;img src="images/closed1.jpeg" width="1333" style="display: block; margin: auto;" /&gt;
 
---- 
-
-# Issues
+---
+# Issues 
 
 - Sentence based (open-set) tasks are generally preferred as they are the most ecologically valid 
  
@@ -82,20 +88,20 @@ background-image: url("cocktail.jpeg")
  + Talker variability
 
 ---
----
+
 
 # Iowa Test of Consonat Perception
 
 + 4-AFC closed-set (single word) SiN task 
   - 120 target words
-    - Spoken by 4 speakers (2 women)
-  -  Foils were minimal pairs differing by first consonant
+  -Spoken by 4 speakers (2 women)
+  - Foils were minimal pairs differing by first consonant
 
 &lt;img src="images/figure1.jpg" width="960" style="display: block; margin: auto;" /&gt;
 
 ---
 
-background-image: url("empty_bottle_03.jpeg")
+background-image: url("images/empty_bottle_03.jpeg")
 
 ---
 
@@ -104,28 +110,78 @@ background-image: url("bob.jpeg")
 ---
 # Procedure
 + Two sessions (1 week apart)
- - Used Gorilla and Prolific
-  - Session 1
-    - *N* = 199
+ - Used Gorilla and Prolific &lt;br&gt; &lt;br&gt;
+--
+&lt;table class=" lightable-classic-2" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; width: auto !important; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Factor &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; M/N(range and %) &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Age &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 27 (23, 35) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gender &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Female &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 48 (49%) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Male &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 48 (49%) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Other &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 (1.0%) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Race &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Asian &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9 (22%) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Black or African American &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 11 (27%) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; White &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 21 (51%) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Unknown &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 56 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
+---
+
+# Procedure
++ Session 1 (N=199)
++ Session 2 (N=98) &lt;br&gt; &lt;br&gt;
+--
+.pull-right[
 
 
 
 &lt;img src="graph1.png" width="513" style="display: block; margin: auto;" /&gt;
----
+]
+--
+.pull-left[
 
-# Procedure
- - Session 2
-  - *N* = 98
-  
 
 
 &lt;img src="graph2.png" width="513" style="display: block; margin: auto;" /&gt;
-
----
-
-## Validation
-
+]
 ---
 # Reliability
  +  &lt;font size="5"&gt; Test-Retest &lt;/font&gt;
@@ -133,10 +189,20 @@ background-image: url("bob.jpeg")
 
 
 
-&lt;img src="BeOnline_JG_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
-
-
+&lt;img src="BeOnline_JG_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
 ---
+# Validity
++ CNC
+  Lists 1 and 4 
+
+&lt;img src="BeOnline_JG_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
+---
+# Validity
++ AzBio
+  - 1 list of 20 sentences
+
+&lt;img src="BeOnline_JG_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" /&gt;
+
 
 ---
 # Future
@@ -153,6 +219,7 @@ background-image: url("bob.jpeg")
 + Give bonuses for completing second session - set up separate studies on recruitment platform. 
 + Be explicit in your study subscription. 
 + Email subjects multiple times to remind them of an upcoming session. 
++ Try to make experiment length reasonable
 
 ---
 
@@ -162,11 +229,13 @@ background-image: url("bob.jpeg")
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://www.jvcasillas.com/ru_xaringan/js/ru_xaringan.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "highlightLines": true,
-"ratio": "15:12",
-"countIncrementalSlides": false
+"countIncrementalSlides": false,
+"ratio": "16:12"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

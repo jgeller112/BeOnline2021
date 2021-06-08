@@ -1,25 +1,27 @@
 ---
 title: "What Did You Say? A Web-Based Validation of a Speech-In-Noise Task"
-subtitle: ""
+subtitle: "BeOnline 2021"
 author: "Jason Geller"
 institute: "Rutgers University Center for Cognitive Science"
-date: BeOnline 2021 06-28-2021
+date:  "2021-06-28 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
     lib_dir: libs
+    css: ["hygge", "rutgers", "rutgers-fonts"]
     nature:
+      beforeInit: ["https://www.jvcasillas.com/ru_xaringan/js/ru_xaringan.js", "https://platform.twitter.com/widgets.js"]
       highlightStyle: github
       highlightLines: true
-      ratio: "15:12"
       countIncrementalSlides: false
+      ratio: "16:12"
+ 
 ---
 <style type="text/css">
 .remark-slide-content {
     font-size: 22px;
     padding: 1em 4em 1em 4em;
 }
-</style>
+
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
@@ -32,7 +34,8 @@ style_mono_accent(
 )
 ```
 ---
-background-image: url("cocktail.jpeg")
+
+background-image:url("images/cocktail.jpeg")
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -69,19 +72,19 @@ knitr::include_graphics('images/open.jpeg')
 
 # Closed vs. Open-Set Tasks
 + Closed-set
+
   - Fall
   - Ball
   - Shawl
   - Wall
 
-```{r,fig.width=12, fig.align="center", fig.height=4,echo=FALSE}
+```{r,fig.width=12, fig.align="center", fig.height=10,echo=FALSE}
 knitr::include_graphics('images/closed1.jpeg')
 
 ```	
 
---- 
-
-# Issues
+---
+# Issues 
 
 - Sentence based (open-set) tasks are generally preferred as they are the most ecologically valid 
  
@@ -95,14 +98,14 @@ knitr::include_graphics('images/closed1.jpeg')
  + Talker variability
 
 ---
----
+
 
 # Iowa Test of Consonat Perception
 
 + 4-AFC closed-set (single word) SiN task 
   - 120 target words
-    - Spoken by 4 speakers (2 women)
-  -  Foils were minimal pairs differing by first consonant
+  -Spoken by 4 speakers (2 women)
+  - Foils were minimal pairs differing by first consonant
 
 ```{r,fig.width=8, fig.align="center", fig.height=4,echo=FALSE}
 knitr::include_graphics('images/figure1.jpg')
@@ -111,7 +114,7 @@ knitr::include_graphics('images/figure1.jpg')
 
 ---
 
-background-image: url("empty_bottle_03.jpeg")
+background-image: url("images/empty_bottle_03.jpeg")
 
 ---
 
@@ -120,9 +123,36 @@ background-image: url("bob.jpeg")
 ---
 # Procedure
 + Two sessions (1 week apart)
- - Used Gorilla and Prolific
-  - Session 1
-    - *N* = 199
+ - Used Gorilla and Prolific <br> <br>
+--
+```{r, echo=FALSE , warning=FALSE, message=FALSE}
+library(datapasta)
+library(kableExtra)
+
+d=data.frame(
+     stringsAsFactors = FALSE,
+          check.names = FALSE,
+               Factor = c("Age","Gender","Female",
+                          "Male","Other","Race","Asian",
+                          "Black or African American","White","Unknown"),
+  `M/N(range and %)` = c("27 (23, 35)","", 
+                          "48 (49%)","48 (49%)","1 (1.0%)","","9 (22%)",
+                          "11 (27%)","21 (51%)","56")
+)
+
+d %>%
+  kbl() %>%
+  kable_classic_2(full_width = F)
+
+```
+
+---
+
+# Procedure
++ Session 1 (N=199)
++ Session 2 (N=98) <br> <br>
+--
+.pull-right[
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 library(DiagrammeR)
@@ -153,17 +183,14 @@ grViz("digraph flowchart {
 
 ```
 
-
 ```{r,fig.width=12, fig.align="center", fig.height=4,echo=FALSE}
 knitr::include_graphics('graph1.png')
 
 ```	
----
+]
+--
+.pull-left[
 
-# Procedure
- - Session 2
-  - *N* = 98
-  
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 
 grViz("digraph flowchart {
@@ -192,11 +219,7 @@ grViz("digraph flowchart {
 knitr::include_graphics('graph2.png')
 
 ```	
-
----
-
-## Validation
-
+]
 ---
 # Reliability
  +  <font size="5"> Test-Retest </font>
@@ -242,9 +265,71 @@ ggplot.component = list(theme(text = element_text(size = 20, family="Arial")), g
 session12 
 
 ```
-
-
 ---
+# Validity
++ CNC
+  Lists 1 and 4 
+
+```{r fig.align='center',fig.width=12, fig.align="center", fig.height=6,echo=FALSE,  warning=FALSE, message=FALSE}
+
+cnc=ggstatsplot::ggscatterstats(
+  data = icc_itcp,
+  x = session1,
+  y = meancnc,
+  bf.message = FALSE, 
+  xlab = "Session 1 of ITCP",
+  ylab = "CNC",
+  type= "r", 
+  xfill = "#0072B2", # color fill for x-axis marginal distribution
+  yfill = "#009E73", # color fill for y-axis marginal distribution
+  xalpha = 0.6, # transparency for x-axis marginal distribution
+  yalpha = 0.6, # transparency for y-axis marginal distribution
+point.size = 4,
+results.subtitle=TRUE, 
+xsize=1, 
+ysize=1, 
+ggstatsplot.layer = FALSE, 
+ggplot.component = list(theme(text = element_text(size = 20, family="Arial")), ggplot.component=list(
+        scale_y_continuous(limits = c(0, 1)),
+         scale_x_continuous(limits = c(0, 1)))))
+
+#d=ggsave("Azbio_new1.png", width=12, height=12, dpi=500, type = "cairo")
+cnc
+
+```
+---
+# Validity
++ AzBio
+  - 1 list of 20 sentences
+
+```{r fig.align='center',fig.width=12, fig.align="center", fig.height=6,echo=FALSE,  warning=FALSE, message=FALSE}
+
+cnc=ggstatsplot::ggscatterstats(
+  data = icc_itcp,
+  x = session1,
+  y = mean_az,
+  bf.message = FALSE, 
+  xlab = "Session 1 of ITCP",
+  ylab = "AzBio",
+  type= "r", 
+  xfill = "#0072B2", # color fill for x-axis marginal distribution
+  yfill = "#009E73", # color fill for y-axis marginal distribution
+  xalpha = 0.6, # transparency for x-axis marginal distribution
+  yalpha = 0.6, # transparency for y-axis marginal distribution
+point.size = 4,
+results.subtitle=TRUE, 
+xsize=1, 
+ysize=1, 
+ggstatsplot.layer = FALSE, 
+ggplot.component = list(theme(text = element_text(size = 20, family="Arial")), ggplot.component=list(
+        scale_y_continuous(limits = c(0, 1)),
+         scale_x_continuous(limits = c(0, 1)))))
+
+#d=ggsave("Azbio_new1.png", width=12, height=12, dpi=500, type = "cairo")
+cnc
+
+```
+
 
 ---
 # Future
@@ -261,6 +346,7 @@ session12
 + Give bonuses for completing second session - set up separate studies on recruitment platform. 
 + Be explicit in your study subscription. 
 + Email subjects multiple times to remind them of an upcoming session. 
++ Try to make experiment length reasonable
 
 ---
 
